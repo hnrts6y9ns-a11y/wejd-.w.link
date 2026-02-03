@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ogłoszenie</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f3f3f3;
+  margin:0;
+}
+.card{
+  max-width:720px;
+  margin:30px auto;
+  background:#fff;
+  padding:24px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+h1,h2{
+  margin-top:0;
+}
+.meta{
+  margin-bottom:20px;
+  line-height:1.6;
+}
+.btn{
+  background:#ff5a7a;
+  color:#fff;
+  padding:16px;
+  text-align:center;
+  border-radius:10px;
+  font-size:18px;
+  cursor:pointer;
+  margin-top:20px;
+}
+.btn:hover{
+  opacity:.9;
+}
+.hidden{
+  display:none;
+}
+.buttons{
+  display:flex;
+  gap:15px;
+  margin-top:25px;
+}
+.yes{
+  flex:1;
+  background:#ff5a7a;
+}
+.no{
+  flex:1;
+  background:#ccc;
+  color:#333;
+}
+.footer{
+  font-size:12px;
+  color:#999;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="offer">
+  <h1>Wyjątkowy egzemplarz ❤️</h1>
+
+  <div class="meta">
+    <b>Rocznik:</b> ponadczasowy<br>
+    <b>Przebieg:</b> coraz więcej wspólnych chwil<br>
+    <b>Stan:</b> zakochany<br>
+    <b>Wyposażenie:</b> uśmiech, czułość, poczucie humoru
+  </div>
+
+  <div class="btn" onclick="openQuestion()">Kontakt ze sprzedającym</div>
+
+  <div class="footer">
+    *Ogłoszenie prywatne. Najlepsze rzeczy trafiają się niespodziewanie.
+  </div>
+</div>
+
+<div class="card hidden" id="question">
+  <h2>Zanim podejmiesz decyzję…</h2>
+  <h1>Czy zostaniesz moją walentynką? 💖</h1>
+
+  <div class="buttons">
+    <div class="btn yes" onclick="yes()">TAK ❤️</div>
+    <div class="btn no" onclick="no()">Muszę się zastanowić 🙈</div>
+  </div>
+</div>
+
+<div class="card hidden" id="answer">
+  <h1>To była najlepsza decyzja dnia 💘</h1>
+  <p>Obiecuję dbać, rozśmieszać i być zawsze po Twojej stronie.</p>
+</div>
+
+<script>
+function openQuestion(){
+  document.getElementById('offer').style.display='none';
+  document.getElementById('question').style.display='block';
+}
+function yes(){
+  document.getElementById('question').style.display='none';
+  document.getElementById('answer').style.display='block';
+}
+function no(){
+  alert("Spokojnie… najlepsze historie zaczynają się powoli 😉");
+}
+</script>
+
+</body>
+</html>
